@@ -75,22 +75,37 @@ local Window = Rayfield:CreateWindow({
     ConfigurationSaving = {Enabled = false},
 })
 
--- ==================== TAB 1: Op Spawner ====================
-local Tab1 = Window:CreateTab('⚡ Op Spawner', 4483362458)
+-- ==================== TAB 1: No Key Script ====================
+local Tab1 = Window:CreateTab('🔑 No Key Script', 4483362458)
 
-Tab1:CreateSection('🌐 GagHub Op Spawner Collection')
+Tab1:CreateSection('🔑 No Key Script Collection')
 
 Tab1:CreateButton({
+    Name = '👾 Lumin Hub',
+    Callback = loadScript('https://rawscripts.net/raw/Grow-a-Garden-2-Lumin-Hub-235857', 'Lumin Hub'),
+})
+
+-- ==================== TAB 2: Op Spawner ====================
+local Tab2 = Window:CreateTab('⚡ Op Spawner', 4483362458)
+
+Tab2:CreateSection('🌐 GagHub Op Spawner Collection')
+
+Tab2:CreateButton({
     Name = '🌐 MozilHub',
     Callback = loadScript('https://raw.githubusercontent.com/MoziIOnTop/pro/refs/heads/main/PetSpwnr', 'MozilHub'),
 })
 
--- ==================== TAB 2: Dupe ====================
-local Tab2 = Window:CreateTab('💰 Dupe', 4483362458)
-
-Tab2:CreateSection('💰 Dupe Collection')
-
 Tab2:CreateButton({
+    Name = '⭐ StarHub',
+    Callback = loadScript('https://raw.githubusercontent.com/annan1310/gag2/refs/heads/main/starspawner', 'StarHub'),
+})
+
+-- ==================== TAB 3: Dupe ====================
+local Tab3 = Window:CreateTab('💰 Dupe', 4483362458)
+
+Tab3:CreateSection('💰 Dupe Collection')
+
+Tab3:CreateButton({
     Name = '💰 MozilDupe',
     Callback = loadScript('https://raw.githubusercontent.com/raw-scripts/MyOwnScriptDupeV2/refs/heads/main/lua', 'MozilDupe'),
 })
