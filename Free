@@ -1,0 +1,104 @@
+-- GagHub Loader (Rayfield)
+
+local Players = game:GetService("Players")
+local genv = getgenv()
+
+local Rayfield = nil
+local RayfieldLoaded = false
+
+local RayfieldURLs = {
+    'https://raw.githubusercontent.com/shlexware/Rayfield/main/source.lua',
+    'https://sirius.menu/rayfield',
+}
+
+for _, url in ipairs(RayfieldURLs) do
+    local success, result = pcall(function()
+        return loadstring(game:HttpGet(url))()
+    end)
+    if success and result then
+        Rayfield = result
+        RayfieldLoaded = true
+        break
+    end
+end
+
+if not RayfieldLoaded then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "GagHub Error",
+        Text = "Failed to load UI! Check your connection.",
+        Duration = 5
+    })
+    return
+end
+
+local Notify = Rayfield.Notify
+
+local function safeCallback(func)
+    return function(...)
+        local success, err = pcall(func, ...)
+        if not success then
+            Notify({
+                Title = "⚠️ Script Error",
+                Content = "Failed to load: " .. tostring(err):sub(1, 50),
+                Duration = 3
+            })
+        end
+    end
+end
+
+local function loadScript(url, name)
+    return safeCallback(function()
+        local success, err = pcall(function()
+            loadstring(game:HttpGet(url))()
+        end)
+        if success then
+            Notify({
+                Title = "✅ Loaded",
+                Content = name .. " loaded successfully!",
+                Duration = 2
+            })
+        else
+            Notify({
+                Title = "❌ Error",
+                Content = "Failed to load " .. name,
+                Duration = 3
+            })
+        end
+    end)
+end
+
+local Window = Rayfield:CreateWindow({
+    LoadingTitle = 'Loading GagHub...',
+    Name = '🌱 GagHub',
+    KeySystem = false,
+    LoadingSubtitle = 'All scripts ready in one window',
+    ConfigurationSaving = {Enabled = false},
+})
+
+-- ==================== TAB 1: Op Spawner ====================
+local Tab1 = Window:CreateTab('⚡ Op Spawner', 4483362458)
+
+Tab1:CreateSection('🌐 GagHub Op Spawner Collection')
+
+Tab1:CreateButton({
+    Name = '🌐 MozilHub',
+    Callback = loadScript('https://raw.githubusercontent.com/MoziIOnTop/pro/refs/heads/main/PetSpwnr', 'MozilHub'),
+})
+
+-- ==================== TAB 2: Dupe ====================
+local Tab2 = Window:CreateTab('💰 Dupe', 4483362458)
+
+Tab2:CreateSection('💰 Dupe Collection')
+
+Tab2:CreateButton({
+    Name = '💰 MozilDupe',
+    Callback = loadScript('https://raw.githubusercontent.com/raw-scripts/MyOwnScriptDupeV2/refs/heads/main/lua', 'MozilDupe'),
+})
+
+Notify({
+    Duration = 3,
+    Title = '🌱 GagHub Ready!',
+    Content = 'MozilHub & MozilDupe siap digunakan!',
+})
+
+print("✅ GagHub Loaded - Ready to use!")
