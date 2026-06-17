@@ -85,6 +85,16 @@ Tab1:CreateButton({
     Callback = loadScript('https://rawscripts.net/raw/Grow-a-Garden-2-Lumin-Hub-235857', 'Lumin Hub'),
 })
 
+Tab1:CreateButton({
+    Name = '⚡ Axonic Hub',
+    Callback = loadScript('https://rawscripts.net/raw/Grow-a-Garden-2-Axonic-Keyless-Xeno-Supported-237427', 'Axonic Hub'),
+})
+
+Tab1:CreateButton({
+    Name = '💎 Quartyz Hub',
+    Callback = loadScript('https://rawscripts.net/raw/Grow-a-Garden-2-Quartyz-GAG-2-Script-free-keyless-236614', 'Quartyz Hub'),
+})
+
 -- ==================== TAB 2: Op Spawner ====================
 local Tab2 = Window:CreateTab('⚡ Op Spawner', 4483362458)
 
@@ -113,7 +123,7 @@ Tab3:CreateButton({
 Notify({
     Duration = 3,
     Title = '🌱 GagHub Ready!',
-    Content = 'MozilHub & MozilDupe siap digunakan!',
+    Content = 'All scripts siap digunakan!',
 })
 
 print("✅ GagHub Loaded - Ready to use!")
