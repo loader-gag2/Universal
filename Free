@@ -95,6 +95,11 @@ Tab1:CreateButton({
     Callback = loadScript('https://rawscripts.net/raw/Grow-a-Garden-2-Quartyz-GAG-2-Script-free-keyless-236614', 'Quartyz Hub'),
 })
 
+Tab1:CreateButton({
+    Name = '🌾 Instan Harvest',
+    Callback = loadScript('https://pastefy.app/nTZhjcB1/raw', 'Instan Harvest'),
+})
+
 -- ==================== TAB 2: Op Spawner ====================
 local Tab2 = Window:CreateTab('⚡ Op Spawner', 4483362458)
 
@@ -113,6 +118,11 @@ Tab2:CreateButton({
 Tab2:CreateButton({
     Name = '🌱 Seed Spawner',
     Callback = loadScript('https://raw.githubusercontent.com/VexoScriptsOnTop/_/refs/heads/main/GaG2/SeedPackSpawner.lua', 'Seed Spawner'),
+})
+
+Tab2:CreateButton({
+    Name = '🌱 Seed/Pet Spawner',
+    Callback = loadScript('https://raw.githubusercontent.com/VexoScriptsOnTop/_/refs/heads/main/GaG2/FakeSeedandPetSpawnerMailable', 'Seed/Pet Spawner'),
 })
 
 -- ==================== TAB 3: Dupe ====================
